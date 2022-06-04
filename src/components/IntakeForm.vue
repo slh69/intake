@@ -8,8 +8,8 @@
       <GeneralInformation   />
       <GeneralInfoAdult v-show="data.calculateAge > 17" />
       <GeneralInfoChild v-show="data.calculateAge < 17" />
-      <FemaleSpecific v-show="data.gender.includes('fmale')" />
-      <MaleSpecific  v-show="data.gender.includes('male') && data.age > 17 "/>
+      <FemaleSpecific v-show="data.gender.includes('Female')" />
+      <MaleSpecific  v-show="data.gender.includes('Male') "/>
       <MedicalHxAdult  v-show="data.calculateAge > 17 "/>
       <MedicalHxChild  v-show="data.calculateAge < 17" />
       <MedicalHxFamily />

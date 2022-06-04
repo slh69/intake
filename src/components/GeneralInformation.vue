@@ -138,7 +138,7 @@ o
 
         <div class="sm:col-span-3">
           <FormKit
-            v-model="genders"
+            v-model="data.gender"
             type="radio"
             :options="['Male', 'Female', 'Other']"
             class="checkbox"
@@ -180,63 +180,6 @@ const formOfContact = [
   { name: "Mail" },
 ];
 const dob = ref("");
-const genders = ref("");
-const genderOptions = ref([
-  { label: "Male", value: 0 },
-  { label: "Female", value: 1 },
-  { label: "other", value: 2 },
-]);
 const referral = ref("");
-const states = ref([
-  "AL",
-  "AR",
-  "AZ",
-  "CA",
-  "CO",
-  "CT",
-  "DC",
-  "DE",
-  "FL",
-  "GA",
-  "HI",
-  "IA",
-  "ID",
-  "IL",
-  "IN",
-  "KS",
-  "KY",
-  "LA",
-  "MA",
-  "MD",
-  "ME",
-  "MI",
-  "MN",
-  "MO",
-  "MS",
-  "MT",
-  "NC",
-  "ND",
-  "NE",
-  "NH",
-  "NJ",
-  "NM",
-  "NV",
-  "NY",
-  "OH",
-  "OK",
-  "OR",
-  "PA",
-  "RI",
-  "SC",
-  "SD",
-  "TN",
-  "TX",
-  "UT",
-  "VA",
-  "VT",
-  "WA",
-  "WI",
-  "WV",
-  "WY",
-]);
+
 </script>
