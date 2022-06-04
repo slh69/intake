@@ -12,7 +12,7 @@ o
     <div class="p-10">
       <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
         <div class="sm:col-span-4">
-          <FormKit v-model="fName" label="First Name" type="text" />
+          <FormKit v-model="fName" label="First Name *" type="text" />
         </div>
 
         <div class="sm:col-span-4">
@@ -20,7 +20,7 @@ o
         </div>
 
         <div class="sm:col-span-4">
-          <FormKit v-model="lName" label="Last Name" type="text" />
+          <FormKit v-model="lName" label="Last Name *" type="text" />
         </div>
 
         <div class="sm:col-span-3">
@@ -28,7 +28,7 @@ o
         </div>
 
         <div class="sm:col-span-2">
-          <FormKit v-model="phone1" type="tel" label="Primary Phone" class="input" />
+          <FormKit v-model="phone1" type="tel" label="Primary Phone *" class="input" />
         </div>
 
         <div class="sm:col-span-2">

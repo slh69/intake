@@ -1,8 +1,11 @@
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    @submit="submitForm">
+     type="form"
+    v-model="formData"
+    :form-class="submitted ? 'hide' : 'show'"
+    submit-label="Submit"
+    @submit="submitHandler"
+    >
   
         
       <GeneralInformation   />
@@ -18,8 +21,10 @@
       <WorkComp v-show="data.reasonForVisit.includes('wc') " />
       <Accident v-show="data.reasonForVisit.includes('aa') " />
   </Formkit>      
-
-    <pre>{{ value }}</pre>
+ <div v-if="submitted">
+    <h2>Submission successful!</h2>
+  </div>
+    <pre>{{ formData }}</pre>
 
 </template>
 
@@ -41,10 +46,12 @@
   import Accident from './Accident.vue'
   import { differenceInYears, parseISO } from 'date-fns'
   import { useFormStore} from '../stores/formStore.js'
-
+import { ref } from 'vue'
+const submitted = ref(false)
+const formData = ref({})
   
   const data = useFormStore()
   
-  
+  const save = console.log('form was saved')
    
 </script>

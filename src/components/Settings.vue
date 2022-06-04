@@ -109,8 +109,9 @@
         </SwitchLabel>
       </SwitchGroup>
 
-      <div class="grid place-items-center mt-10">
+      <div class="flex place-items-center gap-x-4 mt-10">
         <FormKit type="button" label="Close" @click="data.settings = !data.settings" />
+        <FormKit type="button" label="Save" />
       </div>
     </div>
 
