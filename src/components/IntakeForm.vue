@@ -11,6 +11,7 @@
       <GeneralInformation   />
       <GeneralInfoAdult v-show="data.calculateAge > 17" />
       <GeneralInfoChild v-show="data.calculateAge < 17" />
+      <Guardian v-show="data.calculateAge < 17" />
       <FemaleSpecific v-show="data.gender.includes('Female')" />
       <MaleSpecific  v-show="data.gender.includes('Male') "/>
       <MedicalHxAdult  v-show="data.calculateAge > 17 "/>
@@ -52,6 +53,6 @@ const formData = ref({})
   
   const data = useFormStore()
   
-  const save = console.log('form was saved')
+  const submitHandler = console.log('form was saved')
    
 </script>

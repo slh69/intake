@@ -48,7 +48,7 @@ createApp(App)
 
   checkbox: {
     legend: 'font-bold text-sm pb-3',
-    wrapper: 'flex mb-1 cursor-pointer',
+    wrapper: 'flex mb-1 cursor-pointer ',
     input: 'form-check-input appearance-none h-5 w-5 mr-1 border border-gray-500 rounded-sm bg-white checked:bg-cyan-500 focus:outline-none focus:ring-0 transition duration-200',
     label: 'text-sm text-gray-700 pr-4 w-25',
     options: 'flex-wrap grid grid-cols-4',
@@ -106,7 +106,7 @@ createApp(App)
     input: 'w-full h-10 px-3 border border-gray-400 formkit-invalid:border-red-400 overflow-hidden focus-within:border-cyan-500 rounded-lg text-base text-gray-700 placeholder-gray-400',
   },
   submit: {
-    wrapper: 'mb-1',
+    wrapper: 'mb-1 grid place-items-center',
     input: 'bg-cyan-400 hover:bg-purple-500 text-white text-md font-normal py-3 px-5 rounded'
   },
   tel: {

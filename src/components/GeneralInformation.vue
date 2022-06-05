@@ -10,25 +10,30 @@ o
   </div>
   
     <div class="p-10">
-      <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
-        <div class="sm:col-span-4">
-          <FormKit v-model="fName" label="First Name *" type="text" />
+      <div class="grid grid-cols-1 gap-y-6 gap-x-4 lg:grid-cols-12">
+        <div class="lg:col-span-4 relative">
+          <FormKit v-model="fName" label="First Name " type="text" />
+          <span class=" font-bold text-red-600 absolute top-0  left-20">*</span>
         </div>
 
         <div class="sm:col-span-4">
           <FormKit v-model="mName" label="Middle Name" type="text" />
         </div>
 
-        <div class="sm:col-span-4">
-          <FormKit v-model="lName" label="Last Name *" type="text" />
+        <div class="sm:col-span-4 relative">
+          <FormKit v-model="lName" label="Last Name " type="text" />
+          <span class=" font-bold text-red-600 absolute top-0  left-20">*</span>
+
         </div>
 
         <div class="sm:col-span-3">
           <FormKit v-model="nName" label="Nick Name" type="text" />
         </div>
 
-        <div class="sm:col-span-2">
-          <FormKit v-model="phone1" type="tel" label="Primary Phone *" class="input" />
+        <div class="sm:col-span-2 relative">
+          <FormKit v-model="phone1" type="tel" label="Primary Phone " class="input" />
+          <span class=" font-bold text-red-600 absolute top-0  right-40">*</span>
+
         </div>
 
         <div class="sm:col-span-2">

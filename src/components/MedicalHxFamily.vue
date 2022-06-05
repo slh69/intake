@@ -3,7 +3,7 @@
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">Family Past Medical History</h3>
     </div>
-    <div class="p-10">
+    <div class="p-10 ">
       <FormKit
         v-model="familyMedHx"
         type="checkbox"
