@@ -1,6 +1,6 @@
 <template>
   <FormKit
-     type="form"
+    type="form"
     v-model="formData"
     :form-class="submitted ? 'hide' : 'show'"
     submit-label="Submit"
@@ -53,6 +53,8 @@ const formData = ref({})
   
   const data = useFormStore()
   
-  const submitHandler = console.log('form was saved')
-   
+  const submitHandler = (e) =>{
+    e.preventDefault()
+    console.log(formData)}
+
 </script>

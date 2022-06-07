@@ -102,8 +102,8 @@ createApp(App)
   },
   select: {
     label: 'block mb-1 font-bold text-sm formkit-invalid:text-red-500',
-    inner: 'overflow-hidden focus-within:border-cyan-500 ',
-    input: 'w-full h-10 px-3 border border-gray-400 formkit-invalid:border-red-400 overflow-hidden focus-within:border-cyan-500 rounded-lg text-base text-gray-700 placeholder-gray-400',
+    inner: 'overflow-hidden focus-within:border-cyan-500',
+    input: 'w-full h-10 px-3 border border-gray-400 bg-white formkit-invalid:border-red-400 overflow-hidden focus-within:border-cyan-500 rounded-lg text-base text-gray-700 placeholder-gray-400',
   },
   submit: {
     wrapper: 'mb-1 grid place-items-center',

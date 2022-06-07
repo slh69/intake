@@ -9,7 +9,17 @@ export const useFormStore = defineStore('formStore', {
         age: '',
         reasonForVisit: [],
         formData: {},
-        settings: false
+        settings: false,
+        fspecific: true,
+        mspecific: true,
+        mhxAdult:true,
+        mhxChild:true,
+        mhxFamily:true,
+        reasonVisit:true,
+        sports:true,
+        accident:true,
+        workComp:true,
+        requireEmail:false,         
       }),
   getters: {
     calculateAge (state) {
