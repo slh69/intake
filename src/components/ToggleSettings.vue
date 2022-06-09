@@ -7,7 +7,7 @@
       <div>
       <p class="flex">Click on the 
         <span class="px-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @click="showFemale = !showFemale">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" >
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
@@ -17,6 +17,77 @@
         </div>
     </div>
 
+    <div class="grid grid-cols-12">
+      <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
+        <Switch v-model="data.genInfoAdult"
+          :class="[data.genInfoAdult ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
+          <span aria-hidden="true"
+            :class="[data.genInfoAdult ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
+        </Switch>
+        <SwitchLabel as="span" class="ml-3">
+          <span class="text-sm font-medium text-gray-900">General Info Adult
+          </span>
+        </SwitchLabel>
+      </SwitchGroup>
+      <div class="pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @click="showGenInfoAdult = !showGenInfoAdult">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="col-span-4">
+        <p v-if="showGenInfoAdult">This is Gen Info Adult specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12">
+      <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
+        <Switch v-model="data.genInfoChild"
+          :class="[data.genInfoChild ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
+          <span aria-hidden="true"
+            :class="[data.genInfoChild ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
+        </Switch>
+        <SwitchLabel as="span" class="ml-3">
+          <span class="text-sm font-medium text-gray-900">General Info Child
+          </span>
+        </SwitchLabel>
+      </SwitchGroup>
+      <div class="pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @click="showGenInfoChild= !showGenInfoChild">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="col-span-4">
+        <p v-if="showGenInfoChild">This is Gen Info Child specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-12">
+      <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
+        <Switch v-model="data.guardian"
+          :class="[data.guardian ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
+          <span aria-hidden="true"
+            :class="[data.guardian ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
+        </Switch>
+        <SwitchLabel as="span" class="ml-3">
+          <span class="text-sm font-medium text-gray-900">Guardian
+          </span>
+        </SwitchLabel>
+      </SwitchGroup>
+      <div class="pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @click="showGuardian = !showGuardian">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="col-span-4">
+        <p v-if="showGuardian">This is Guardian specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+      </div>
+    </div>    
 
 
     <div class="grid grid-cols-12">
@@ -283,6 +354,9 @@ const data = useFormStore();
 
 
 // settings to show what form is about if i is clicked
+const showGenInfoAdult = ref(false)
+const showGenInfoChild = ref(false)
+const showGuardian = ref(false)
 const showFemale = ref(false)
 const showMale = ref(false)
 const showmhxAdult = ref(false)

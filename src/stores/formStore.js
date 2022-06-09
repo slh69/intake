@@ -10,6 +10,9 @@ export const useFormStore = defineStore('formStore', {
         reasonForVisit: [],
         formData: {},
         settings: false,
+        genInfoAdult: true,
+        genInfoChild: true,
+        guardian: true,
         fspecific: true,
         mspecific: true,
         mhxAdult:true,
@@ -27,8 +30,7 @@ export const useFormStore = defineStore('formStore', {
         const age = differenceInYears(new Date(), dates)
             return age
      },
+     
+}
 
-
-   },
-   }
- )       
+})

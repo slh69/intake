@@ -149,6 +149,7 @@ o
           <div class="sm:col-span-2">
             <FormKit type="date" class="input" label="Date Of Birth" v-model="data.dob" value="" name="DOB"
               @change="data.calculateAge" />
+              <p>Age: {{ data.calculateAge }}</p>
           </div>
 
           <div class="sm:col-span-3">
