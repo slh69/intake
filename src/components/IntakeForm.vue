@@ -8,11 +8,11 @@
     <GeneralInfoChild v-show="data.calculateAge < 17 && data.genInfoChild === true" />
     <Guardian v-show="data.calculateAge < 17 && data.guardian === true" />
     <FemaleSpecific v-show="data.gender.includes('Female') && data.calculateAge > 17 && data.fspecific === true" />
-    <MaleSpecific v-show="data.gender.includes('Male') && data.calculateAge > 17 && data.mspecific === true" />
+    <MaleSpecific v-show="showMaleForm" />
     <MedicalHxAdult v-show="data.calculateAge > 17 && data.mhxAdult === true" />
     <MedicalHxChild v-show="data.calculateAge < 17 && data.mhxChild === true" />
     <MedicalHxFamily v-show="data.mhxFamily === true" />
-    <ReasonForVisit v-show="data.reasonForVisit === true" />
+    <ReasonForVisit v-show="data.reasonVisit === true" />
     <Sports v-show="data.reasonForVisit.includes('si') && data.reasonVisit === true" />
     <WorkComp v-show="data.reasonForVisit.includes('wc') && data.reasonVisit === true" />
     <Accident v-show="data.reasonForVisit.includes('aa') && data.reasonVisit === true" />
@@ -42,7 +42,7 @@ import WorkComp from './WorkComp.vue'
 import Accident from './Accident.vue'
 import { differenceInYears, parseISO } from 'date-fns'
 import { useFormStore } from '../stores/formStore.js'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 const submitted = ref(false)
 const formData = ref({})
 
@@ -53,10 +53,10 @@ const submitHandler = () => {
 }
 
 
-const showMaleForm = () => {
-  if (data.mspecific === true && data.gender.includes('Male') && data.calculateAge > 17)
-  { return true }
-}
+const showMaleForm = computed(() => 
+  data.mspecific === true && 
+  data.gender.includes('Male') && 
+  data.calculateAge > 17)
 
 
 </script>

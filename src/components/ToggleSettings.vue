@@ -6,14 +6,14 @@
       <h3 class="text-xl pt-6 pb-6 font-bold text-cyan-500">Settings</h3>
       <div>
       <p class="flex">Click on the 
-        <span class="px-4">
+        <span class="pr-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" >
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
         </svg>
         </span>
-        for more information regarding each toggle.</p>
+        for more information regarding each toggle.  If ALL toggles are turned off, the only infomation required for form submission is First Name, Last Name, and Primary Phone Number.</p>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
             :class="[data.genInfoAdult ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
         </Switch>
         <SwitchLabel as="span" class="ml-3">
-          <span class="text-sm font-medium text-gray-900">General Info Adult
+          <span class="text-sm font-medium text-gray-900">General Info Adult 
           </span>
         </SwitchLabel>
       </SwitchGroup>
@@ -37,7 +37,7 @@
         </svg>
       </div>
       <div class="col-span-4">
-        <p v-if="showGenInfoAdult">This is Gen Info Adult specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+        <p v-if="showGenInfoAdult">Data collection includes occupation, marital status, emergency contact, lifestyle questions.  Activates when user enters age greater than 17 years old</p>
       </div>
     </div>
 
@@ -61,7 +61,7 @@
         </svg>
       </div>
       <div class="col-span-4">
-        <p v-if="showGenInfoChild">This is Gen Info Child specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+        <p v-if="showGenInfoChild">Data collection includes pediatrician, vaccine hx, hospitalizations, birth complications, current meds, adoption info.  Activates when user enters age as less than 17 years old</p>
       </div>
     </div>
     
@@ -85,7 +85,7 @@
         </svg>
       </div>
       <div class="col-span-4">
-        <p v-if="showGuardian">This is Guardian specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+        <p v-if="showGuardian">Data collection includes Guardians contact information.  Activates when user enters age less than 17 years old</p>
       </div>
     </div>    
 
@@ -110,7 +110,7 @@
         </svg>
       </div>
       <div class="col-span-4">
-        <p v-if="showFemale">This is FEMALE specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+        <p v-if="showFemale">Female Specific information related to pregnancy and other female issues.  Activates when a user selects gender as Female and age is greater than 17 years old</p>
       </div>
     </div>
 
@@ -134,7 +134,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showMale">This is MALE specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur facere repudiandae qui, sunt eaque eum!</p>
+        <p v-if="showMale">Male specific information related to prostate and sexual issues.  Activates when user selects gender as Male and age is greater than 17 years old.</p>
       </div>
     </div>
 
@@ -158,7 +158,7 @@
       </svg>
       </div>
             <div class="col-span-4">
-        <p v-if="showmhxAdult">This is Medical History Adult specific info</p>
+        <p v-if="showmhxAdult">Checkbox collection of health related issues for adults.  Activates if user inputs age greater than 17 years old.</p>
       </div>
     </div>
 
@@ -182,7 +182,7 @@
         </svg>
       </div>
       <div class="col-span-4">
-        <p v-if="showmhxChild">This is Medical Hx Child specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit est aperiam asperiores! Iste magnam repellat sapiente harum. Explicabo, magnam. Praesentium.</p>
+        <p v-if="showmhxChild">Checkbox collection of health related issues for children.  Activates if user inputs age less than 17 years old.</p>
       </div>
     </div>    
 
@@ -206,7 +206,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showMhxFamily">This is Medical Hx Family specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur facere repudiandae qui, sunt eaque eum!</p>
+        <p v-if="showMhxFamily">Checkbox collection of health related issues for family. Activates if only if this toggle is on.</p>
       </div>
     </div>    
 
@@ -230,7 +230,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showreasonVisit">This is Reason For Visit specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur facere repudiandae qui, sunt eaque eum!</p>
+        <p v-if="showreasonVisit">Data collection includes checkboxes for reason for visit - Wellness check, Sport's Enhancement, Sport's Injury, Workman's Comp, Auto Accident, Pregnancy.  Activates only if toggle is on.</p>
       </div>
     </div>     
     
@@ -254,7 +254,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showsports">This is Sports Injury specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur facere repudiandae qui, sunt eaque eum!</p>
+        <p v-if="showsports">Data collection of questions related to Sport's Injury.  Reason For Visit toggle must be on.  Form activates when Sport's Injury checkbox is checked.</p>
       </div>
     </div>    
     
@@ -278,7 +278,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showaccident">This is Accident specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur facere repudiandae qui, sunt eaque eum!</p>
+        <p v-if="showaccident">Data collection of questions related to Auto Accident Injury.  Reason For Visit toggle must be on.  Form activates when Auto Accident checkbox is checked.</p>
       </div>
     </div>     
 
@@ -302,7 +302,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showworkComp">This is Workman's Comp specific info Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur facere repudiandae qui, sunt eaque eum!</p>
+        <p v-if="showworkComp">Data collection of questions related to Workman's Comp Injury.  Reason For Visit toggle must be on.  Form activates when Workman's Comp checkbox is checked.</p>
       </div>
     </div>      
 
@@ -326,7 +326,7 @@
       </svg>
       </div >
             <div class="col-span-4">
-        <p v-if="showrequireEmail">This is Require Email specific info </p>
+        <p v-if="showrequireEmail">Changes General Information form to require email address in order for form to submit. </p>
       </div>
     </div>        
     
