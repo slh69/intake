@@ -3,12 +3,14 @@
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">Past Medical History Adult</h3>
     </div>
-    <div class="p-10">
-      <FormKit
-        v-model="adultMedHx"
-        type="checkbox"
-        label="Choose all that apply"
-        :options="[
+    <FormKit type="group" v-model="MedHxAdultForm" name="Medical Hx Adult">
+      <div class="p-10">
+        <FormKit 
+          v-model="adultMedHx" 
+          type="checkbox" 
+          label="Choose all that apply"
+          name="Medical Hx Adult" 
+          :options="[
           'No known Medical Issues',
           'Anemia',
           'Anxiety',
@@ -43,15 +45,17 @@
           'Tuberculosis',
           'Whooping Cough',
           'Other',
-        ]"
-        options-class="$reset flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-8"
-      />
+        ]" 
+        options-class="$reset flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-8" />
 
-      <FormKit
-        type="textarea"
-        label="Please give details for anything that requires more explanation"
-      />
-    </div>
+        <FormKit 
+          type="textarea" 
+          label="Please give details for anything that requires more explanation"
+          name="Explain Med Hx Adult"
+          v-model="ExplainMedHxAdult"
+        />
+      </div>
+    </FormKit>
   </div>
 </template>
 
@@ -62,6 +66,8 @@ export default {
   data() {
     return {
       adultMedHx: [],
+      ExplainMedHxAdult: '',
+      MedHxAdultForm:''
     };
   },
 };

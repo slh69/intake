@@ -5,12 +5,18 @@
     </div>
     <div class="p-10">
       <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
+
+        <FormKit
+  type="group"
+  v-model="Accident"
+  name="Accident"
+>
         <div class="sm:col-span-2">
-          <FormKit v-model="accidentDate" type="date" label="Date of Accident" />
+          <FormKit v-model="accidentDate" type="date" label="Date of Accident" name="Accident Date" />
         </div>
 
         <div class="sm:col-span-2">
-          <FormKit v-model="positionInVehicle" type="text" label="Position in vehicle?" />
+          <FormKit v-model="positionInVehicle" type="text" label="Position in vehicle?" name="Position in Vehicle" />
         </div>
 
         <div class="sm:col-span-4">
@@ -18,6 +24,7 @@
             v-model="describeAccident"
             type="textarea"
             label="Describe the accident?"
+            name="Describe Accident"
           />
         </div>
 
@@ -26,6 +33,7 @@
             v-model="accidentSurgery"
             type="radio"
             label="Have you had surgery for this injury?"
+            name="Accident Surgery"
             :options="['Yes', 'No']"
           />
         </div>
@@ -35,6 +43,7 @@
             v-model="advisedSurgery"
             type="radio"
             label="Have you been advised to have surgery?"
+            name="Surgery Advised"
             :options="['Yes', 'No']"
           />
         </div>
@@ -44,6 +53,7 @@
             v-model="accidentSpecialist"
             type="radio"
             label="Have you seen a specialist?"
+            name="Accident Specialist"
             :options="['Yes', 'No']"
           />
         </div>
@@ -53,6 +63,7 @@
             v-model="accidentHospitalized"
             type="radio"
             label="Were you hospitalized?"
+            name="Accident Hospitalized"
             :options="['Yes', 'No']"
           />
         </div>
@@ -62,12 +73,13 @@
             v-model="accidentFormerCare"
             type="radio"
             label="Have you had physical therapy / chiropractic care for this injury?"
+            name="Accident PT"
             :options="['Yes', 'No']"
           />
         </div>
 
         <div class="sm:col-span-4">
-          <FormKit v-model="accidentWithWhom" type="text" label="With whom?" />
+          <FormKit v-model="accidentWithWhom" type="text" label="With whom?" name="Accident With Whom" />
         </div>
 
         <div class="sm:col-span-4">
@@ -75,6 +87,7 @@
             v-model="accidentDiagnosis"
             type="textarea"
             label="What was the diagnosis?"
+            name="Accident Diagnosis"
           />
         </div>
 
@@ -83,6 +96,7 @@
             v-model="accidentMedication"
             type="checkbox"
             label="Are you taking medication for this injury?"
+            name="Accident Medication"
             :options="['Yes', 'No']"
           />
         </div>
@@ -92,6 +106,8 @@
             v-model="accidentMedList"
             type="textarea"
             label="Please list medications?"
+            name="Accident Med List"
+            
           />
         </div>
 
@@ -100,6 +116,7 @@
             v-model="accidentTests"
             type="checkbox"
             label="What tests have you had for this injury?"
+            name="Accident Tests"
             :options="[
               'MRI',
               'CT Scan',
@@ -120,6 +137,7 @@
             v-model="accidentFindings"
             type="textarea"
             label="What were the findings?"
+            name="Accident Findings"
           />
         </div>
 
@@ -128,6 +146,7 @@
             v-model="accidentHasHelped"
             type="textarea"
             label="What have you tried that has helped?"
+            name="Accident Has Helped"
           />
         </div>
 
@@ -136,6 +155,7 @@
             v-model="accidentHasntHelped"
             type="textarea"
             label="What have you tried that hasn't helped?"
+            name="Accident Hasn't Helped"
           />
         </div>
 
@@ -144,6 +164,7 @@
             v-model="accidentLocationInjury"
             type="checkbox"
             label="Injury location?  Check all that apply"
+            name="Accident Injury Location"
             :options="[
               'Neck',
               'Back',
@@ -164,10 +185,11 @@
             v-model="range_2"
             type="range"
             label="Pain Level?"
-            name="range_2"
+            name="Accident Pain Level"
             min="0"
             max="10"
             help="0 is no pain, 10 is extreme pain"
+            
           />
         </div>
         <div class="sm:col-span-1">
@@ -179,6 +201,7 @@
             v-model="accidentPainType"
             type="checkbox"
             label="Type of pain"
+            name="Accident Pain Type"
             :options="[
               'Tingle',
               'Sharp',
@@ -198,8 +221,10 @@
             v-model="accidentAddInfo"
             type="textarea"
             label="List any other information that is pertinant to this injury"
+            name="Accident Additional Info"
           />
         </div>
+        </FormKit>
       </div>
     </div>
   </div>
@@ -230,6 +255,7 @@ export default {
       range_2: "",
       accidentPainType: "[]",
       accidentAddInfo: "",
+      Accident: ''
     };
   },
 };

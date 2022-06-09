@@ -53,8 +53,7 @@ const formData = ref({})
   
   const data = useFormStore()
   
-  const submitHandler = (e) =>{
-    e.preventDefault()
+  const submitHandler = () =>{
     console.log(formData)}
 
 </script>
