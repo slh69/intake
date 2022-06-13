@@ -1,13 +1,12 @@
 <template>
-  <div class="space-y-8 border-4 m-4 rounded-lg">
+  <div class="space-y-8 border-4 rounded-lg sm:m-1 px-2 lg:m-4 ">
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">
         Past Medical History Child/Infant
       </h3>
     </div>
     <FormKit type="group" v-model="MedHxChildForm" name="Medical Hx Child">
-      <div class="p-10">
-        <div class="sm:col-span-3">
+      <div>
           <FormKit 
             v-model="childMedHx" 
             type="checkbox" 
@@ -40,7 +39,7 @@
               'Whooping Cough',
               'Other',
           ]" 
-          options-class="$reset flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-8" />
+          options-class="$reset sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-8" />
 
           <FormKit 
             type="textarea" 
@@ -49,7 +48,6 @@
             v-model="ExplainMedHxChild"
             />
         </div>
-      </div>
     </FormKit>
   </div>
 </template>

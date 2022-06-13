@@ -1,8 +1,8 @@
 <template>
 
 
-   <IntakeForm v-if="!data.settings"/>
-   <ToggleSettings v-if="data.settings"/>
+   <IntakeForm v-if="!data.settings" />
+   <ToggleSettings v-if="data.settings" />
 
 </template>
 
@@ -15,7 +15,7 @@ import { useFormStore } from "./stores/formStore";
 const data = useFormStore();
 
 
-  
-  
-   
+
+
+
 </script>

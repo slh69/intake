@@ -1,17 +1,17 @@
 o
 <template>
-  <div class="space-y-8 border-4 m-4 rounded-lg">
+  <div class="space-y-8 border-4 rounded-lg sm:m-1 px-2 lg:m-4 ">
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">General Information</h3>
     </div>
 
-    <div class="flex justify-end pr-20">
+    <div class="lg:flex justify-end pr-20 ">
       <FormKit type="button" label="Settings" @click="data.settings = !data.settings" />
     </div>
     <FormKit type="group" v-model="GeneralInfo" name="General Info">
-      <div class="p-10">
-        <div class="grid grid-cols-1 gap-y-6 gap-x-4 lg:grid-cols-12">
-          <div class="lg:col-span-4 relative">
+      <div class="sm:p-0 lg:p-10">
+        <div class="grid grid-cols-1 gap-y-6 gap-x-4 lg:grid-cols-12 md:grid-cols-4 sm:grid-cols-1">
+          <div class="md:col-span-2 lg:col-span-4  relative">
             <FormKit 
               v-model="fName" 
               label="First Name " 
@@ -22,11 +22,11 @@ o
             <span class=" font-bold text-red-600 absolute top-0  left-20">*</span>
           </div>
 
-          <div class="sm:col-span-4">
+          <div class="md:col-span-2 lg:col-span-4 ">
             <FormKit v-model="mName" label="Middle Name" type="text" name="Middle Name" />
           </div>
 
-          <div class="sm:col-span-4 relative">
+          <div class="md:col-span-2 lg:col-span-4  relative">
             <FormKit 
               v-model="lName" 
               label="Last Name " 
@@ -38,11 +38,11 @@ o
 
           </div>
 
-          <div class="sm:col-span-3">
+          <div class="md:col-span-2 lg:col-span-3 ">
             <FormKit v-model="nName" label="Nick Name" type="text" name="Nick Name" />
           </div>
 
-          <div class="sm:col-span-2">
+          <div class="md:col-span-2 lg:col-span-2 relative">
             <FormKit 
               v-model="phone1" 
               name="Primary Phone" 
@@ -50,14 +50,15 @@ o
               type="text"
               placeholder="(123) 456-7890"
               validation="required"  />
+            <span class=" sm:font-bold text-red-600 absolute top-0 left-1/3 lg:left-1/2 ">*</span>
           </div>
 
-          <div class="sm:col-span-2">
+          <div class="md:col-span-2 lg:col-span-2 ">
             <FormKit v-model="phone2" name="Secondary Phone" label="Secondary Phone" type="text"
               placeholder="(456) 789-1234" />
           </div>
 
-          <div class="sm:col-span-5 relative">
+          <div class="md:col-span-2 lg:col-span-5  relative">
             <FormKit
               type="email"
               v-model="email"
@@ -68,21 +69,20 @@ o
             />
             <span v-show="data.requireEmail === true" class=" font-bold text-red-600 absolute top-0  left-10">*</span>
           </div>
-          <p>{{data.requireEmail }}</p>
 
-          <div class="sm:col-span-4">
+          <div class="md:col-span-2 lg:col-span-4 ">
             <FormKit v-model="address1" label="Address1" type="text" name="Address1" />
           </div>
 
-          <div class="sm:col-span-2">
+          <div class="md:col-span-2 lg:col-span-2 ">
             <FormKit v-model="address2" label="Address2" type="text" name="Address2" />
           </div>
 
-          <div class="sm:col-span-3">
+          <div class="md:col-span-2 lg:col-span-3 ">
             <FormKit v-model="city" label="City" type="text" name="City" />
           </div>
 
-          <div class="sm:col-span-1">
+          <div class="md:col-span-2 lg:col-span-1 ">
             <FormKit v-model="state" label="State" type="select" name="state" placeholder="Select" :options="[
               'AL',
               'AR',
@@ -137,27 +137,32 @@ o
             ]" />
           </div>
 
-          <div class="sm:col-span-2">
+          <div class="md:col-span-2 lg:col-span-2 ">
             <FormKit v-model="zip" type="text" label="Zip Code" class="input" name="Zip" />
           </div>
 
-          <div class="sm:col-span-4">
-            <FormKit class="checkbox" type="radio" label="Best form of contact" v-model="formOfContact"
-              name="Best Form of Contact" :options="['Primary Phone', 'Secondary Phone', 'Email', 'Mail']" />
+          <div class="md:col-span-4 lg:col-span-4 ">
+            <FormKit 
+              class="checkbox" 
+              type="radio" 
+              label="Best form of contact" 
+              v-model="formOfContact"
+              name="Best Form of Contact" 
+              options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2 md:grid-cols-4 "
+              :options="['Primary Phone', 'Secondary Phone', 'Email', 'Mail']" />
           </div>
 
-          <div class="sm:col-span-2">
+          <div class="md:col-span-2 lg:col-span-2 ">
             <FormKit type="date" class="input" label="Date Of Birth" v-model="data.dob" value="" name="DOB"
               @change="data.calculateAge" />
-              <p>Age: {{ data.calculateAge }}</p>
           </div>
 
-          <div class="sm:col-span-3">
+          <div class="md:col-span-2 lg:col-span-3 ">
             <FormKit v-model="data.gender" type="radio" :options="['Male', 'Female', 'Other']" class="checkbox"
               name="Gender" label="Gender" />
           </div>
 
-          <div class="sm:col-span-3">
+          <div class="md:col-span-4 lg:col-span-3 ">
             <FormKit v-model="referral" label="How did you hear about us?" type="text" name="Referral" />
           </div>
 

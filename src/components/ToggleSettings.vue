@@ -1,14 +1,14 @@
 <template>
 
-  <div class="space-y-8 border-4 mt-10 mr-60 ml-60 rounded-lg">
+  <div class="space-y-8 border-4 rounded-lg sm:m-1 px-2 lg:m-4 ">
 
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 pb-6 font-bold text-cyan-500">Settings</h3>
          </div>
 
 
-    <div class="grid grid-cols-12">
-      <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
+    <div class="md:grid-cols-3 lg:grid grid-cols-12 ">
+      <SwitchGroup as="div" class="flex lg:col-start-6 col-span-2">
         <Switch v-model="data.genInfoAdult"
           :class="[data.genInfoAdult ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
           <span aria-hidden="true"
@@ -26,12 +26,12 @@
             clip-rule="evenodd" />
         </svg>
       </div>
-      <div class="col-span-4 pr-4">
+      <div class="lg:col-span-4 pr-4">
         <p v-if="gahover">Data collection includes occupation, marital status, emergency contact, lifestyle questions.  Activates when user enters age greater than 17 years old</p>
       </div>
     </div>
 
-    <div class="grid grid-cols-12">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.genInfoChild"
           :class="[data.genInfoChild ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -55,7 +55,7 @@
       </div>
     </div>
     
-    <div class="grid grid-cols-12">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.guardian"
           :class="[data.guardian ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -80,7 +80,7 @@
     </div>    
 
 
-    <div class="grid grid-cols-12">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.fspecific"
           :class="[data.fspecific ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.mspecific"
           :class="[data.mspecific ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -128,7 +128,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.mhxAdult"
           :class="[data.mhxAdult ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -152,7 +152,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-12">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.mhxChild"
           :class="[data.mhxChild ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -176,7 +176,7 @@
       </div>
     </div>    
 
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.mhxFamily"
           :class="[data.mhxFamily ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -200,7 +200,7 @@
       </div>
     </div>    
 
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.reasonVisit"
           :class="[data.reasonVisit ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -224,7 +224,7 @@
       </div>
     </div>     
     
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.sports"
           :class="[data.sports ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -248,7 +248,7 @@
       </div>
     </div>    
     
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.accident"
           :class="[data.accident ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -272,7 +272,7 @@
       </div>
     </div>     
 
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.workComp"
           :class="[data.workComp ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -296,7 +296,7 @@
       </div>
     </div>      
 
-    <div class="grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.requireEmail"
           :class="[data.requireEmail ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">

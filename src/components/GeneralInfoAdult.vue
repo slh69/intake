@@ -1,25 +1,31 @@
 <template>
-  <div class="space-y-8 border-4 m-4 rounded-lg">
+  <div class="space-y-8 border-4 rounded-lg sm:m-1 px-2 lg:m-4 ">
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">General Information Adult</h3>
     </div>
     <FormKit type="group" v-model="GenInfoAdult" name="General Info Adult">
-      <div class="p-10">
-        <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
-          <div class="sm:col-span-3">
+      <div >
+        <div class="grid grid-cols-1 gap-y-6 gap-x-4 lg:grid-cols-12 md:grid-cols-4 sm:grid-cols-1">
+
+          <div class="md:col-span-2 lg:col-span-3">
             <FormKit v-model="occupation" type="text" label="Occupation" name="Occupation" />
           </div>
 
-          <div class="sm:col-span-3">
-            <FormKit v-model="maritalStatus" type="radio" label="Marital Status" name="Marital Status"
+          <div class="md: col-span-2 lg:col-span-3">
+            <FormKit 
+              v-model="maritalStatus" 
+              type="radio" 
+              label="Marital Status" 
+              name="Marital Status"
+              options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2"
               :options="['Single', 'Married', 'Divorced', 'Widow Widower']" />
           </div>
 
-          <div class="sm:col-span-2">
+          <div class="md: col-span-2 lg:col-span-2">
             <FormKit v-model="spouse" type="text" label="Spouse Name" name="Spouse Name" />
           </div>
 
-          <div class="sm:col-span-4">
+          <div class="md:col-span-2 lg:col-span-4">
             <FormKit v-model="emergency" type="text" label="Emergency Contact" name="Emergency Contact"
               wrapper-class="static" />
             <div>
@@ -70,8 +76,13 @@
           </div>
 
           <div class="sm:col-span-3">
-            <FormKit v-model="drugUse" type="checkbox" label="Do you use any of the following? Check all that apply."
-              name="Drug Use" :options="['Caffeine', 'Nicotine', 'Alcohol', 'Recreational Drugs']" />
+            <FormKit 
+              v-model="drugUse" 
+              type="checkbox" 
+              label="Do you use any of the following? Check all that apply."
+              name="Drug Use"
+              options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2"
+              :options="['Caffeine', 'Nicotine', 'Alcohol', 'Recreational Drugs']" />
           </div>
 
           <div class="sm:col-span-3">

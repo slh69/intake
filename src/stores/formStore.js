@@ -22,7 +22,9 @@ export const useFormStore = defineStore('formStore', {
         sports:true,
         accident:true,
         workComp:true,
-        requireEmail:false,         
+        requireEmail:false,       
+        submitted: false
+  
       }),
   getters: {
     calculateAge (state) {

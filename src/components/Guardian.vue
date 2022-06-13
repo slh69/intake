@@ -1,10 +1,10 @@
 <template>
-  <div class="space-y-8 border-4 m-4 rounded-lg">
+  <div class="space-y-8 border-4 rounded-lg sm:m-1 px-2 lg:m-4 ">
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">Guardian</h3>
     </div>
     <FormKit type="group" v-model="GuardianForm" name="Guardian Form">
-      <div class="p-10">
+      <div>
         <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
           <div class="sm:col-span-3">
             <FormKit v-model="gFirstName" type="text" label="Guardian First Name" name="Guardian First Name"
@@ -16,7 +16,12 @@
           </div>
 
           <div class="sm:col-span-6">
-            <FormKit v-model="gRelationship" type="radio" label="Relationship to patient" name="Relationship to patient"
+            <FormKit 
+              v-model="gRelationship" 
+              type="radio" 
+              label="Relationship to patient" 
+              name="Relationship to patient"
+              options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2"
               :options="[
                 'Mother',
                 'Step-Mother',

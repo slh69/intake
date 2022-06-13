@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-8 border-4 m-4 rounded-lg">
+  <div class="space-y-8 border-4 rounded-lg sm:m-1 px-2 lg:m-4 ">
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 font-bold text-cyan-500">Work Comp Details</h3>
     </div>
@@ -8,7 +8,7 @@
         v-model="WorkComp"
         name="Workman's Comp"
 >
-    <div class="p-10">
+    <div >
       <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
         <div class="sm:col-span-2">
           <FormKit 
@@ -131,7 +131,7 @@
               'Bone Density Scan',
               'Other',
             ]"
-            options-class="$reset flex-wrap grid gap-x-3 gap-y-2 grid-cols-5"
+            options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2 lg:grid-cols-3"
           />
         </div>
 
@@ -178,7 +178,7 @@
               'Ankle',
               'Foot',
             ]"
-            options-class="$reset flex-wrap grid gap-x-3 gap-y-2 grid-cols-5"
+            options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2 lg:grid-cols-3"
           />
         </div>
 
@@ -203,6 +203,7 @@
             type="checkbox"
             label="Type of pain.  Choose all that apply"
             name="WC pain type"
+            options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2 lg:grid-cols-3"
             :options="[
               'Tingle',
               'Sharp',
