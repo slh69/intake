@@ -23,7 +23,10 @@ export const useFormStore = defineStore('formStore', {
         accident:true,
         workComp:true,
         requireEmail:false,       
-        submitted: false
+        submitted: false,
+        hipaa: '',
+        hipaaRequire: false,
+
   
       }),
   getters: {

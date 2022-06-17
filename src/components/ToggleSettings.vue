@@ -4,10 +4,10 @@
 
     <div class="grid place-items-center">
       <h3 class="text-xl pt-6 pb-6 font-bold text-cyan-500">Settings</h3>
-         </div>
+    </div>
 
 
-    <div class="md:grid-cols-3 lg:grid grid-cols-12 ">
+    <div class="lg:grid grid-cols-12 ">
       <SwitchGroup as="div" class="flex lg:col-start-6 col-span-2">
         <Switch v-model="data.genInfoAdult"
           :class="[data.genInfoAdult ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
@@ -15,19 +15,21 @@
             :class="[data.genInfoAdult ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
         </Switch>
         <SwitchLabel as="span" class="ml-3">
-          <span class="text-sm font-medium text-gray-900">General Info Adult 
+          <span class="text-sm font-medium text-gray-900">General Info Adult
           </span>
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="gahover = true" @mouseleave="gahover = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="gahover = true" @mouseleave="gahover = false">
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
         </svg>
       </div>
       <div class="lg:col-span-4 pr-4">
-        <p v-if="gahover">Data collection includes occupation, marital status, emergency contact, lifestyle questions.  Activates when user enters age greater than 17 years old</p>
+        <p v-if="gahover">Data collection includes occupation, marital status, emergency contact, lifestyle questions.
+          Activates when user enters age greater than 17 years old</p>
       </div>
     </div>
 
@@ -44,17 +46,19 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="gchover = true" @mouseleave="gchover = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="gchover = true" @mouseleave="gchover = false">
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
         </svg>
       </div>
       <div class="col-span-4 pr-4">
-        <p v-if="gchover">Data collection includes pediatrician, vaccine hx, hospitalizations, birth complications, current meds, adoption info.  Activates when user enters age as less than 17 years old</p>
+        <p v-if="gchover">Data collection includes pediatrician, vaccine hx, hospitalizations, birth complications,
+          current meds, adoption info. Activates when user enters age as less than 17 years old</p>
       </div>
     </div>
-    
+
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.guardian"
@@ -68,16 +72,18 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="guahover = true" @mouseleave="guahover = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="guahover = true" @mouseleave="guahover = false">
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
         </svg>
       </div>
       <div class="col-span-4 pr-4">
-        <p v-if="guahover">Data collection includes Guardians contact information.  Activates when user enters age less than 17 years old</p>
+        <p v-if="guahover">Data collection includes Guardians contact information. Activates when user enters age less
+          than 17 years old</p>
       </div>
-    </div>    
+    </div>
 
 
     <div class="lg:grid grid-cols-12">
@@ -93,14 +99,16 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="fshover = true" @mouseleave="fshover = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="fshover = true" @mouseleave="fshover = false">
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
         </svg>
       </div>
       <div class="col-span-4 pr-4">
-        <p v-if="fshover">Female Specific information related to pregnancy and other female issues.  Activates when a user selects gender as Female and age is greater than 17 years old</p>
+        <p v-if="fshover">Female Specific information related to pregnancy and other female issues. Activates when a
+          user selects gender as Female and age is greater than 17 years old</p>
       </div>
     </div>
 
@@ -117,14 +125,16 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="mshover = true" @mouseleave="mshover = false">
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="mshover">Male specific information related to prostate and sexual issues.  Activates when user selects gender as Male and age is greater than 17 years old.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="mshover = true" @mouseleave="mshover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="col-span-4 pr-4">
+        <p v-if="mshover">Male specific information related to prostate and sexual issues. Activates when user selects
+          gender as Male and age is greater than 17 years old.</p>
       </div>
     </div>
 
@@ -141,14 +151,16 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="mhahover = true" @mouseleave="mhahover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="mhahover = true" @mouseleave="mhahover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-            <div class="col-span-4 pr-4">
-        <p v-if="mhahover">Checkbox collection of health related issues for adults.  Activates if user inputs age greater than 17 years old.</p>
+      <div class="col-span-4 pr-4">
+        <p v-if="mhahover">Checkbox collection of health related issues for adults. Activates if user inputs age greater
+          than 17 years old.</p>
       </div>
     </div>
 
@@ -165,16 +177,18 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="mhchover = true" @mouseleave="mhchover = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="mhchover = true" @mouseleave="mhchover = false">
           <path fill-rule="evenodd"
             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
             clip-rule="evenodd" />
         </svg>
       </div>
       <div class="col-span-4 pr-4">
-        <p v-if="mhchover">Checkbox collection of health related issues for children.  Activates if user inputs age less than 17 years old.</p>
+        <p v-if="mhchover">Checkbox collection of health related issues for children. Activates if user inputs age less
+          than 17 years old.</p>
       </div>
-    </div>    
+    </div>
 
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
@@ -189,16 +203,18 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="mhfhover = true" @mouseleave="mhfhover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="mhfhover">Checkbox collection of health related issues for family. Activates if only if this toggle is on.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="mhfhover = true" @mouseleave="mhfhover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-    </div>    
+      <div class="col-span-4 pr-4">
+        <p v-if="mhfhover">Checkbox collection of health related issues for family. Activates if only if this toggle is
+          on.</p>
+      </div>
+    </div>
 
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
@@ -213,17 +229,19 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="rfvhover = true" @mouseleave="rfvhover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="rfvhover">Data collection includes checkboxes for reason for visit - Wellness check, Sport's Enhancement, Sport's Injury, Workman's Comp, Auto Accident, Pregnancy.  Activates only if toggle is on.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="rfvhover = true" @mouseleave="rfvhover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-    </div>     
-    
+      <div class="col-span-4 pr-4">
+        <p v-if="rfvhover">Data collection includes checkboxes for reason for visit - Wellness check, Sport's
+          Enhancement, Sport's Injury, Workman's Comp, Auto Accident, Pregnancy. Activates only if toggle is on.</p>
+      </div>
+    </div>
+
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.sports"
@@ -237,17 +255,19 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="sportshover = true" @mouseleave="sportshover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="sportshover">Data collection of questions related to Sport's Injury.  Reason For Visit toggle must be on.  Form activates when Sport's Injury checkbox is checked.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="sportshover = true" @mouseleave="sportshover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-    </div>    
-    
+      <div class="col-span-4 pr-4">
+        <p v-if="sportshover">Data collection of questions related to Sport's Injury. Reason For Visit toggle must be
+          on. Form activates when Sport's Injury checkbox is checked.</p>
+      </div>
+    </div>
+
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
         <Switch v-model="data.accident"
@@ -261,16 +281,18 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="acchover = true" @mouseleave="acchover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="acchover">Data collection of questions related to Auto Accident Injury.  Reason For Visit toggle must be on.  Form activates when Auto Accident checkbox is checked.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="acchover = true" @mouseleave="acchover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-    </div>     
+      <div class="col-span-4 pr-4">
+        <p v-if="acchover">Data collection of questions related to Auto Accident Injury. Reason For Visit toggle must be
+          on. Form activates when Auto Accident checkbox is checked.</p>
+      </div>
+    </div>
 
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
@@ -285,16 +307,18 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="wchover = true" @mouseleave="wchover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="wchover">Data collection of questions related to Workman's Comp Injury.  Reason For Visit toggle must be on.  Form activates when Workman's Comp checkbox is checked.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="wchover = true" @mouseleave="wchover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-    </div>      
+      <div class="col-span-4 pr-4">
+        <p v-if="wchover">Data collection of questions related to Workman's Comp Injury. Reason For Visit toggle must be
+          on. Form activates when Workman's Comp checkbox is checked.</p>
+      </div>
+    </div>
 
     <div class="lg:grid grid-cols-12">
       <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
@@ -309,17 +333,56 @@
         </SwitchLabel>
       </SwitchGroup>
       <div class="pt-1">
-       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor" @mouseover="rehover = true" @mouseleave="rehover = false" >
-        <path fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-          clip-rule="evenodd" />
-      </svg>
-      </div >
-            <div class="col-span-4 pr-4">
-        <p v-if="rehover">Changes the General Information form to require an email address in order for the form to submit. </p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="rehover = true" @mouseleave="rehover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
       </div>
-    </div>        
-    
+      <div class="col-span-4 pr-4">
+        <p v-if="rehover">Changes the General Information form to require an email address in order for the form to
+          submit. </p>
+      </div>
+    </div>
+
+    <div class="lg:grid grid-cols-12">
+      <SwitchGroup as="div" class="col-start-6 col-span-2 flex">
+        <Switch v-model="data.hipaaRequire"
+          :class="[data.hipaaRequire ? 'bg-cyan-500' : 'bg-gray-200', 'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0 focus:ring-offset-2 focus:ring-bg-cyan-500']">
+          <span aria-hidden="true"
+            :class="[data.hipaaRequire ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200']" />
+        </Switch>
+        <SwitchLabel as="span" class="ml-3">
+          <span class="text-sm font-medium text-gray-900">Require Agree to office policy
+          </span>
+        </SwitchLabel>
+      </SwitchGroup>
+      <div class="pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 20 20" fill="currentColor"
+          @mouseover="hiphover = true" @mouseleave="hiphover = false">
+          <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="col-span-4 pr-4">
+        <p v-if="hiphover">Requires form user to agree to office policy before form will submit.  Also opens text box to insert office policy.</p>
+      </div>
+    </div>
+
+    <div class="lg:grid grid-cols-12">
+      <div v-show="data.hipaaRequire === true" class="col-span-6 col-start-4">
+        <FormKit 
+          type="textarea" 
+          v-model="data.hipaa" 
+          label="Agreement policy" 
+          rows="10"
+          placeholder="Enter your office agreement verbiage here"          
+          />
+      </div>
+    </div>
+
 
 
     <div class="flex justify-center gap-20">
@@ -357,4 +420,5 @@ const sportshover = ref(false)
 const acchover = ref(false)
 const wchover = ref(false)
 const rehover = ref(false)
+const hiphover = ref(false)
 </script>

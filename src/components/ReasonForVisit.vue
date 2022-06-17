@@ -16,14 +16,7 @@
               v-model="data.reasonForVisit" 
               type="checkbox" 
               label="Reason for Visit" 
-              :options="{
-                well: 'Wellness Check',
-                se: 'Sports Enhancement',
-                si: 'Sports Injury',
-                wc: 'Workman\'s Comp Injury',
-                aa: 'Auto Accident',
-                py: 'Pregnancy',
-              }" 
+              :options="options" 
              options-class="sm:flex-wrap gap-4 grid gap-x-4 gap-y-2 grid-cols-2 md:grid-cols-4"
               name="Reason For Visit"
               validation="required"
@@ -54,11 +47,21 @@
 
 <script setup>
 import { useFormStore } from "../stores/formStore.js";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const data = useFormStore();
 
 const visitChiro = ref("");
 const reasonDisconChiro = ref("");
 const ReasonVisit = ref("")
+
+
+const options = computed(() => {
+  const opt = [ 'Wellness Check', 'Sports Enhancement / Injury','Pregnancy']
+
+  if (data.accident === true) opt.push('Accident');
+  if (data.workComp === true) opt.push('Work Comp');
+
+  return opt;
+});
 </script>

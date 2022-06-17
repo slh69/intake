@@ -1,9 +1,11 @@
 <template>
   <FormKit
     type="form"
-    id="intake"
+    v-model="data.formData"
+    :form-class="submitted ? 'hide' : 'show'"
+    submit-label="Submit"
     @submit="submitHandler"
-  >
+    >
 
 
     <GeneralInformation />
@@ -16,13 +18,13 @@
     <MedicalHxChild v-show="data.calculateAge < 17 && data.mhxChild === true" />
     <MedicalHxFamily v-show="data.mhxFamily === true" />
     <ReasonForVisit v-show="data.reasonVisit === true" />
-    <Sports v-show="data.reasonForVisit.includes('si') && data.reasonVisit === true" />
-    <WorkComp v-show="data.reasonForVisit.includes('wc') && data.reasonVisit === true" />
-    <Accident v-show="data.reasonForVisit.includes('aa') && data.reasonVisit === true" />
+    <Sports v-show="data.reasonForVisit.includes('Sports Enhancement / Injury') && data.reasonVisit === true" />
+    <WorkComp v-show="data.reasonForVisit.includes('Work Comp') && data.reasonVisit === true" />
+    <Accident v-show="data.reasonForVisit.includes('Accident') && data.reasonVisit === true" />
+    <HIPAA v-show="data.hipaaRequire === true"/>
 
   </Formkit>
 
-  
 
 </template>
 
@@ -45,14 +47,30 @@ import Accident from './Accident.vue'
 import { useFormStore } from '../stores/formStore.js'
 import {computed } from 'vue'
 import { reset } from '@formkit/core'
+import axios from 'axios'
+import HIPAA from './HIPAA.vue'
+
 
 const data = useFormStore()
 
 
 const submitHandler = () => {
-  console.log(data.formData)
-    alert('form submitted successfully')
-      }
+
+    axios({
+      method: 'post',
+      url: "http://localhost:3004/formData",
+      data: data.formData
+    })
+    .then( ()=> {
+      alert('Form submitted successfully')
+    })
+    .catch( error => {
+      console.log(error)
+    })
+    .finally( ()=> {
+      console.log('done')
+    })
+}
 
 
 const showMaleForm = computed(() => 
