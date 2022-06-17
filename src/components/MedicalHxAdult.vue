@@ -22,6 +22,7 @@
           'Depression',
           'Diabetes',
           'Epilepsy',
+          'Fibromyalgia',
           'Heart Disease',
           'Hypertension / High BP',
           'Liver Disease',
