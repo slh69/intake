@@ -22,9 +22,9 @@
     <WorkComp v-show="data.reasonForVisit.includes('Work Comp') && data.reasonVisit === true" />
     <Accident v-show="data.reasonForVisit.includes('Accident') && data.reasonVisit === true" />
     <HIPAA v-show="data.hipaaRequire === true"/>
-<pre wrap>{{ data.formData }}</pre>
-  </Formkit>
 
+  </Formkit>
+<pre wrap>{{ data.formData }}</pre>
 
 </template>
 
